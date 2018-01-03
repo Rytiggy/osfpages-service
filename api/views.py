@@ -21,7 +21,7 @@ class HomeViewSet(viewsets.ModelViewSet):
         meta = request.META
         body = json.loads(request.body)
         
-        url = 'https://staging-api.osf.io/v2/nodes/'+body['data']['id']+'/'
+        url = 'https://api.osf.io/v2/nodes/'+body['data']['id']+'/'
         headers = {'Authorization': meta['HTTP_AUTHORIZATION']} 
         r = requests.get(url, headers=headers)
         
